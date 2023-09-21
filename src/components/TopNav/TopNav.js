@@ -1,8 +1,9 @@
 import styles from "./TopNav.module.css";
 import Logo from "../../assets/images/logo.svg";
 import shareIcon from "../../assets/images/ic_share.svg";
+import { Link } from "react-router-dom";
 
-const TopNav = () => {
+const TopNav = ({ now }) => {
   const APP_DOWNLOAD_LINK =
     "https://open.shinhansec.com/phone/goM.jsp?p=OTUxMCYmJiZTJiY*&amp;v=2";
 
@@ -29,8 +30,20 @@ const TopNav = () => {
       </div>
 
       <div className={styles.navContainer}>
-        <div className={styles.leftTab}>국내 주식</div>
-        <div className={styles.rightTab}>해외 주식</div>
+        <div
+          className={`${styles.leftTab} ${
+            now === "국내" ? styles.borderBottom : ""
+          }`}
+        >
+          <Link to="/">국내 주식</Link>
+        </div>
+        <div
+          className={`${styles.rightTab} ${
+            now === "국내" ? "" : styles.borderBottom
+          }`}
+        >
+          <Link to="/global">해외 주식</Link>
+        </div>
       </div>
     </div>
   );

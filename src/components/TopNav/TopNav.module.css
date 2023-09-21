@@ -60,10 +60,14 @@
   gap: 20px;
 }
 
-.leftTab {
+.leftTab,
+.rightTab {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 65px;
+}
+
+.borderBottom {
   border-bottom: 2px solid #0046ff;
 }

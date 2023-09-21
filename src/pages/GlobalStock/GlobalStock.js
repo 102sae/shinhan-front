@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Home.module.css";
+import styles from "./GlobalStock.module.css";
 import HeaderCard from "../../assets/images/header_1.svg";
 import LinkListItem from "../../components/LinkListItem/LinkListItem";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
@@ -14,9 +14,10 @@ const events = [
   { num: 3, title: "대상", text: "신한투자증권 생애 첫 계좌 개설 신규 고객" },
 ];
 
-const Home = () => {
+const GlobalStock = () => {
   const [openAccordion1, setOpenAccordion1] = useState(false);
   const [openAccordion2, setOpenAccordion2] = useState(false);
+
   const onClickAccordion1 = () => {
     setOpenAccordion1(!openAccordion1);
   };
@@ -26,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <TopNav now="국내" />
+      <TopNav now="해외" />
       <div className={styles.container}>
         <section className={styles.header}>
           <div className={styles.headerSubTitle}>지금 계좌 개설하면</div>
@@ -148,4 +149,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default GlobalStock;
