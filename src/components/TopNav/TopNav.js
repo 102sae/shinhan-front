@@ -11,19 +11,26 @@ const TopNav = () => {
   };
 
   return (
-    <div className={styles.container}>
-      {/* 로고 */}
-      <img src={Logo} alt="logo" />
-      <div className={styles.rightButtonContainer}>
-        {/*앱 다운로드 버튼 */}
-        <a href={APP_DOWNLOAD_LINK} target="_blank">
-          <div className={styles.roundButton}>앱 다운로드</div>
-        </a>
+    <div className={styles.headerContainer}>
+      <div className={styles.header}>
+        {/* 로고 */}
+        <img src={Logo} alt="logo" />
+        <div className={styles.rightButtonContainer}>
+          {/*앱 다운로드 버튼 */}
+          <a href={APP_DOWNLOAD_LINK} target="_blank">
+            <div className={styles.roundButton}>앱 다운로드</div>
+          </a>
 
-        {/* 공유 버튼 */}
-        <div className={styles.circleButton} onClick={onClickCopyButton}>
-          <img src={shareIcon} alt="share" />
+          {/* 공유 버튼 */}
+          <div className={styles.circleButton} onClick={onClickCopyButton}>
+            <img src={shareIcon} alt="share" />
+          </div>
         </div>
+      </div>
+
+      <div className={styles.navContainer}>
+        <div className={styles.leftTab}>국내 주식</div>
+        <div className={styles.rightTab}>해외 주식</div>
       </div>
     </div>
   );

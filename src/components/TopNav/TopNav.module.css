@@ -1,38 +1,69 @@
-.container {
-    height: 65px;
-    border-bottom: 2px solid #EAEAEA;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 16px;
+.headerContainer {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #fff;
+  width: 390px;
+}
+.header {
+  height: 65px;
+  border-bottom: 2px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 16px;
 }
 
-.rightButtonContainer{
-    display: flex;
-    gap: 6px;
-    align-items: center;
+.rightButtonContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
-.roundButton{
-    border-radius: 20px;
-    background: linear-gradient(90deg, #0094FF 0%, #0046FF 114.29%);
-    padding: 10px 14px;
+.roundButton {
+  border-radius: 20px;
+  background: linear-gradient(90deg, #0094ff 0%, #0046ff 114.29%);
+  padding: 10px 14px;
 
-    color: #FFF;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
 }
-.circleButton{
-    background-color: #EAECEF;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    cursor: pointer;
-    
-    /* 가운데 정렬 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.circleButton {
+  background-color: #eaecef;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+
+  /* 가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*---------네비게이션--------------*/
+.navContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #111;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  gap: 20px;
+}
+
+.leftTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  border-bottom: 2px solid #0046ff;
 }
