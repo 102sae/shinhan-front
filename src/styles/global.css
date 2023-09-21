@@ -1,0 +1,12 @@
+body {
+  font-family: "Pretendard Variable";
+  letter-spacing: -0.1px;
+  background-color: lightblue;
+}
+
+.layout {
+  max-width: 390px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}

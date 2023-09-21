@@ -1,9 +1,13 @@
-import './App.css';
+import "./styles/reset.css";
+import "./styles/global.css";
+import TopNav from "./components/TopNav/TopNav";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
-    <div className="App">
-      <div>HI</div>
+    <div className="layout">
+      <TopNav />
+      <Home />
     </div>
   );
 }

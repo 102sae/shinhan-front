@@ -1,0 +1,126 @@
+.container {
+}
+
+.header {
+  background-color: #eaebef;
+  padding: 50px 24px;
+}
+
+.primaryColor {
+  color: #0046ff;
+}
+
+.headerSubTitle {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.headerTitle {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 18px;
+}
+
+/* ------ 이벤트 Header Card ------ */
+.cardContainer {
+  border-radius: 24px;
+  background: #fff;
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.cardImageContainer {
+  text-align: center;
+}
+.cardImage {
+  width: 174px;
+  padding: 20px;
+}
+.cardTitle {
+  padding-bottom: 2px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.cardDesc {
+  padding-top: 14px;
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.applyButton {
+  border-radius: 30px;
+  background: linear-gradient(90deg, #0094ff 0%, #0046ff 114.29%);
+  padding: 16px;
+  width: 100%;
+
+  color: #fefefe;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.16px;
+
+  /* padding을 포함해서 가로 길이를 계산해준다 */
+  box-sizing: border-box;
+}
+
+.infoContainer {
+  padding-bottom: 48px;
+}
+
+.linkSection {
+  background-color: #eaebef;
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.linkContentContainer {
+  max-height: 0;
+  overflow-y: hidden;
+  transition: all 700ms;
+}
+.itemOpen {
+  max-height: 500px;
+  display: block;
+}
+
+/* ------ 유의사항 섹션 ------ */
+.noticeSction {
+  margin-top: 12px;
+  background-color: white;
+  padding: 24px;
+}
+.noticeTitle {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 28px;
+}
+.noticeText {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer {
+  color: #878787;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 120px 0px 60px;
+}
