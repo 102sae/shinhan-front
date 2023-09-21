@@ -90,10 +90,12 @@
   max-height: 0;
   overflow-y: hidden;
   transition: all 700ms;
+  opacity: 0;
 }
 .itemOpen {
   max-height: 500px;
   display: block;
+  opacity: 1;
 }
 
 /* ------ 유의사항 섹션 ------ */
