@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./GlobalStock.module.css";
 import HeaderCard from "../../assets/images/header_1.svg";
 import LinkListItem from "../../components/LinkListItem/LinkListItem";
@@ -8,21 +8,29 @@ import EventLogo3 from "../../assets/images/event_logo_3.png";
 import EventInfo from "../../components/EventInfo/EventInfo";
 import AccordianListItem from "../../components/AccordianListItem/AccordianListItem";
 import TopNav from "../../components/TopNav/TopNav";
-
-const events = [
-  { num: 1, title: "기간", text: "2023.07.01(토) ~ 2023.12.31(일)" },
-  { num: 3, title: "대상", text: "신한투자증권 생애 첫 계좌 개설 신규 고객" },
-];
+import { getStockGlobalEventList } from "../../apis/stockApis";
+import BenefitCard from "../../components/BenefitCard/BenefitCard";
 
 const GlobalStock = () => {
   const [openAccordion1, setOpenAccordion1] = useState(false);
   const [openAccordion2, setOpenAccordion2] = useState(false);
+  const [events, setEvents] = useState([]);
 
   const onClickAccordion1 = () => {
-    setOpenAccordion1(!openAccordion1);
+    setOpenAccordion1((prev) => !prev);
   };
   const onClickAccordion2 = () => {
-    setOpenAccordion2(!openAccordion2);
+    setOpenAccordion2((prev) => !prev);
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  const fetchEvents = async () => {
+    const response = await getStockGlobalEventList();
+    setEvents(response);
+    console.log(response);
   };
 
   return (
@@ -30,44 +38,41 @@ const GlobalStock = () => {
       <TopNav now="해외" />
       <div className={styles.container}>
         <section className={styles.header}>
-          <div className={styles.headerSubTitle}>지금 계좌 개설하면</div>
-          <div className={styles.headerTitle}>
-            <span className={styles.primaryColor}>수수료 평생혜택</span> 제공
-          </div>
-          {/* 카드 섹션 */}
-          <div className={styles.cardContainer}>
-            <div className={styles.cardImageContainer}>
-              <img
-                className={styles.cardImage}
-                src={HeaderCard}
-                alt="온라인 수수료 평생 무료 혜택"
-              />
-            </div>
-            <div className={styles.cardTitle}>
-              온라인 국내주식 수수료
-              <br />
-              <span className={styles.primaryColor}>평생 혜택 </span>제공
-            </div>
-            {/* 설명 */}
-            <ul className={styles.cardDesc}>
-              <li>* 유관기관 제비용만 고객 부담(07.01 기준)</li>
-              <li>- 코스피, 코스닥, 코넥스 : 0.00363960%</li>
-              <li>- K-OTC : 0.09091870%</li>
-              <li>- ETF, ETN, ELW : 0.00420870%</li>
-              <li>* 온라인 채널 거래에 한함(증권플러스 제외)</li>
-            </ul>
-          </div>
+          {!events && <div>로딩중 ...</div>}
 
-          {/* 기간/대상 */}
-          <div className={styles.infoContainer}>
-            {events.map((event) => (
-              <EventInfo title={event.title} text={event.text} />
+          {events &&
+            events.map((event, index) => (
+              <div key={event.id} className={styles.event}>
+                <div className={styles.roundBadge}>이벤트 0{index + 1}</div>
+                <div className={styles.headerSubTitle}>{event.subTitle}</div>
+                <div className={styles.headerTitle}>
+                  <span className={styles.primaryColor}>{event.title}</span>
+                </div>
+
+                {/* 카드 섹션 */}
+                <BenefitCard benefit={event.benefits[0]} />
+
+                {/* 기간/대상 */}
+                <div className={styles.infoContainer}>
+                  <EventInfo
+                    key={event.id}
+                    index={event.index}
+                    title={"기간"}
+                    text={`${event.startDate}-${event.endDate}`}
+                  />
+                  <EventInfo
+                    key={event.id}
+                    index={event.index}
+                    title={"대상"}
+                    text={event.target}
+                  />
+                </div>
+                {/* 혜택받으러가기 버튼 */}
+                <a>
+                  <div className={styles.applyButton}>{event.buttonLabel}</div>
+                </a>
+              </div>
             ))}
-          </div>
-          {/* 혜택받으러가기 버튼 */}
-          <a>
-            <div className={styles.applyButton}>수수료 평생혜택 받으러가기</div>
-          </a>
         </section>
 
         {/* 아코디언 메뉴  */}
@@ -121,7 +126,7 @@ const GlobalStock = () => {
         </section>
 
         {/* 이벤트 유의사항 */}
-        <section className={styles.noticeSction}>
+        <section className={styles.noticeSection}>
           <h4 className={styles.noticeTitle}>※ 이벤트 유의사항</h4>
           <ul className={styles.noticeText}>
             <li>
@@ -145,6 +150,7 @@ const GlobalStock = () => {
           </footer>
         </section>
       </div>
+      }
     </div>
   );
 };

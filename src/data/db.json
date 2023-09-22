@@ -26,16 +26,13 @@
           "id": 18,
           "image": "https://raw.githubusercontent.com/congchu/shinhan-front/main/src/assets/images/events/slide_2_2.png",
           "title": "이벤트 신청만 해도\n테슬라 0.001주 선착순 제공",
-          "restrictions": [
-            "선착순 30,000명 한정",
-            "소수점 주식 제공"
-          ]
+          "restrictions": ["선착순 30,000명 한정", "소수점 주식 제공"]
         }
       ]
     },
     {
       "id": 14,
-      "subTitle": "지금이 일본 투자할 타이밍123123",
+      "subTitle": "지금이 일본 투자할 타이밍",
       "title": "수수료 + 환전우대 혜택!",
       "startDate": "2023-09-01",
       "endDate": "2023-12-29",
@@ -52,17 +49,13 @@
           "id": 15,
           "image": "https://raw.githubusercontent.com/congchu/shinhan-front/main/src/assets/images/events/slide_1_1.png",
           "title": "일본주식 온라인 매수 수수료 0%",
-          "restrictions": [
-            "MTS, HTS, WTS 거래 시 적용"
-          ]
+          "restrictions": ["MTS, HTS, WTS 거래 시 적용"]
         },
         {
           "id": 18,
           "image": "https://raw.githubusercontent.com/congchu/shinhan-front/main/src/assets/images/events/slide_1_2.png",
           "title": "일본주식 온라인 매수 수수료 0%",
-          "restrictions": [
-            "MTS, HTS, WTS 거래 시 적용"
-          ]
+          "restrictions": ["MTS, HTS, WTS 거래 시 적용"]
         }
       ]
     }

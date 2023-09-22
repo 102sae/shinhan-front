@@ -32,14 +32,14 @@ const TopNav = ({ now }) => {
       <div className={styles.navContainer}>
         <div
           className={`${styles.leftTab} ${
-            now === "국내" ? styles.borderBottom : ""
+            now === "국내" ? styles.borderBottom : styles.lightgrayColor
           }`}
         >
           <Link to="/">국내 주식</Link>
         </div>
         <div
           className={`${styles.rightTab} ${
-            now === "국내" ? "" : styles.borderBottom
+            now === "국내" ? styles.lightgrayColor : styles.borderBottom
           }`}
         >
           <Link to="/global">해외 주식</Link>
